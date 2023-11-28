@@ -15,5 +15,37 @@ img {
 
 body {
     text-align: center;
+    background-color: #cad2c5;
+}
 
+#textOfImg{
+    color: #2f3e46;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+}
+
+header,
+footer{
+    background-color: #84a98c;
+}
+
+button{
+    padding: 10px;
+    color: #000000;
+    background-color: #84a98c;
+    border-radius: 5px;
+    font-weight: bold;
+    border: solid 1px #2f3e46;
+}
+
+button:hover{
+    background-color: #6e9276;
+
+}
+
+#consigne{
+    text-align: left;
+    width: 75%;
+    margin: auto;
 }

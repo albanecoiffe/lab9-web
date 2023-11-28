@@ -7,41 +7,103 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <header>
+        <h1>Advanced Web Programming - Vue Content Behaviour</h1>
+    </header>
+
+    <div id="consigne">
+        <p>
+            <li>
+                <ul>
+                    Following the same idea and logic from our in-class example
+                    <li>
+                        <ul>
+                            https://github.com/anmarjarjees/vue.js-intro/blob/main/P1-Content-Behaviour/p1file4.html
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    Create a single page "index.html"
+                </ul>
+                <ul>Add full CSS with RWD inside a css folder</ul>
+                <ul>Add another JS file inside a sub-folder named "data" to contain a variable/constant of type array that contains a list of objects</ul>
+                <ul>Each object in this file has at least 3 properties:
+                    <li>
+                        <ul>Title: any topic you prefer</ul>
+                        <ul>Desc/Def: a short paragraph to talk about this title</ul>
+                        <ul>img/images: an image link to any online free resource</ul>
+                    </li>
+                </ul>
+                <ul>Use the Vue CDN to connect to the Vue Framework library</ul>
+                <ul>Create a Vue app object with required properties according to our code examples</ul>
+                <ul>Specify the element inside your HTML page where you want to render the Vue properties plus the contents of the JS file inside the data folder:
+                    <li>
+                        <ul>Display "title" or "def" with the toggle click to switch between them</ul>
+                    </li>
+                </ul>
+                <ul>Adding two buttons to navigate through all the object elements inside the data folder
+                    <li>
+                        <ul>Button for next item</ul>
+                        <ul>Button for the previous item</ul>
+                    </li>
+                </ul>
+                <ul>Upload your code on GitHub with a live demo link in the README.md file to run the live demo of your app in the browser.</ul>
+                <ul>Submit the following:
+                    <li>
+                        <ul>Only the link to your GitHub repo</ul>
+                        <ul>In the comments, write the names of all the students in your group</ul>
+                    </li>
+                </ul>
+                <ul>Hints:
+                    <li>
+                        <ul>run the code example in the link above</ul>
+                        <ul>or check our in-class code for the Vue-Part1    P1-C-B => index4.html</ul>
+                    </li>
+                </ul>
+            </li>  
+        </p>
+    </div>
+
     <div id="app">
+        <h1 id="textOfImg" @click="toggleDisplay">{{ displayTitle ? currentItem.title : currentItem.def }}</h1>
+        <img :src="currentItem.img" alt="Image"><br>
         <button @click="prevItem">Previous</button>
         <button @click="nextItem">Next</button>
-        <h1 @click="toggleDisplay">{{ displayTitle ? currentItem.title : currentItem.def }}</h1>
-        <img :src="currentItem.img" alt="Image">
-    </div>
+    </div><br>
+
+    <footer>
+        Albane Coiffe, Alexandre Bussiere, Maelwenn Labidurie
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="data/data.js"></script>
     <script>
         // Vue app will be defined here
         new Vue({
-    el: '#app',
-    data: {
-        items: data,
-        currentIndex: 0,
-        displayTitle: true
-    },
-    computed: {
-        currentItem() {
-            return this.items[this.currentIndex];
-        }
-    },
-    methods: {
-        nextItem() {
-            this.currentIndex = (this.currentIndex + 1) % this.items.length;
-        },
-        prevItem() {
-            this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
-        },
-        toggleDisplay() {
-            this.displayTitle = !this.displayTitle;
-        }
-    }
-});
+            el: '#app',
+            data: {
+                items: data,
+                currentIndex: 0,
+                displayTitle: true
+            },
+            computed: {
+                currentItem() {
+                    return this.items[this.currentIndex];
+                }
+            },
+            methods: {
+                nextItem() {
+                    this.currentIndex = (this.currentIndex + 1) % this.items.length;
+                },
+                prevItem() {
+                    this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
+                },
+                toggleDisplay() {
+                    this.displayTitle = !this.displayTitle;
+                }
+            }
+        });
 
     </script>
 </body>
