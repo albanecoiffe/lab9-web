@@ -1,7 +1,7 @@
 img {
-    width: 300px;
+    width: 500px;
     /* Set the width as you prefer */
-    height: 200px;
+    height: auto;
     /* Set the height as you prefer */
     object-fit: cover;
     /* This makes sure that the aspect ratio is maintained without stretching the image */
