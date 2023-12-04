@@ -1,5 +1,5 @@
 img {
-    width: 500px;
+    width: 700px;
     /* Set the width as you prefer */
     height: auto;
     /* Set the height as you prefer */
@@ -45,7 +45,7 @@ button:hover{
 }
 
 #consigne{
-    text-align: left;
+    text-align: center;
     width: 75%;
     margin: auto;
 }
